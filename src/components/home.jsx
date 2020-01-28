@@ -32,6 +32,7 @@ class Home extends React.Component {
 	render() {
 
         const resultsData = this.state.results;
+        const imgUrl = "https://image.tmdb.org/t/p/w500/";
 
         return (
         <React.Fragment>
@@ -52,11 +53,11 @@ class Home extends React.Component {
                 <input type="submit" value="Envoyer" />
             </form>
 	      </div>
-          <div style={{padding:"35px", color:"rgba(7, 64, 52, 1)", fontFamily:"system-ui", fontSize:"15px"}}>
+          <div style={{padding:"35px", color:"rgba(7, 64, 52, 1)", fontFamily:"system-ui", fontSize:"15px", textAlign:"center"}}>
                 {resultsData.map(item => 
                     <div>
                     <h1>{item.original_title}</h1>
-                    <img src={'https://image.tmdb.org/t/p/w500/' + {...item.poster_path}} style={{width:"300px"}}/>                   
+                    <img src={imgUrl + item.poster_path} alt="no image available" style={{width:"300px"}}/>                   
                     <p>{item.overview}</p>
                     </div>
                     )}
